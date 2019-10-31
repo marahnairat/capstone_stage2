@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Y-Library</string>
+    <string name="login">LOG IN</string>
+    <string name="user_name">username</string>
+    <string name="password">password</string>
+    <string name="sign_in">SIGN IN</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="lib_book">Y-Library Books</string>
+    <string name="fav">Favourites</string>
+    <string name="wread">Will Read</string>
+    <string name="don">Done</string>
+    <string name="allBooks">All  Books</string>
+    <string name="will_read">Later On ...</string>
+    <string name="add_to_later">Later on</string>
+    <string name="readpdf">Read PDF</string>
+    <string name="like">Like</string>
+    <string name="menu_desc" />
+    <string name="favorite_exercises" />
+    <string name="all_books" />
+    <string name="log_out" />
+</resources>
