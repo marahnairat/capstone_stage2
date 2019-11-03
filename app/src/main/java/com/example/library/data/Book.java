@@ -98,7 +98,7 @@ public class Book  implements Parcelable {
     }
 
     public void setDesc(String desc) {
-        this.pdf_url = pdf_url;
+        this.desc = desc;
     }
 
     @Override

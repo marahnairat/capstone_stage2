@@ -19,6 +19,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import com.google.android.material.appbar.AppBarLayout;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -76,7 +77,7 @@ public class libraryActivity extends AppCompatActivity {
         initRecyclerView();
         setUpViewModel();
         callTheAsyncTask();
-        wread.setOnClickListener(new View.OnClickListener() {
+        allbooks.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 context = getApplicationContext();

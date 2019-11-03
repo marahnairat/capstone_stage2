@@ -62,7 +62,7 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.ViewHolder>{
         LayoutInflater inflater = LayoutInflater.from(context);
 
         // Inflate the custom layout
-        View TaskView = inflater.inflate(R.layout.activity_library, parent, false);
+        View TaskView = inflater.inflate(R.layout.book_card, parent, false);
 
         // Return a new holder instance
         return new ViewHolder(TaskView);

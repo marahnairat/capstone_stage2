@@ -8,11 +8,12 @@
     android:background="@color/colorPrimary2"
     tools:context=".ReadpdfActivity">
 
-
+    <include layout="@layout/my_app_bar_layout" />
     <ImageView
         android:id="@+id/bookcover"
         android:layout_width="fill_parent"
         android:layout_height="200dp"
+
         android:nextFocusDown="@+id/bookcover"
         android:layout_margin="20dp"
        />
@@ -33,6 +34,7 @@
         />
 
         <Button
+            android:id="@+id/add_fav"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"

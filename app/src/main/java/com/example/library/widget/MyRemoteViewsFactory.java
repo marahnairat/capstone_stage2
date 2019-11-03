@@ -40,9 +40,9 @@ public class MyRemoteViewsFactory implements RemoteViewsService.RemoteViewsFacto
     @Override
     public RemoteViews getViewAt(int i) {
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.will_read_activity);
-        Book e = books.get(i);
-        views.setTextViewText(R.id.bookdesc, e.getName()+" : "+e.getPdf_url()+" Times");
-        Log.d("MyLog",e.getName());
+        Book b = books.get(i);
+        views.setTextViewText(R.id.bookdesc, b.getName()+" : "+b.getPdf_url()+" Times");
+        Log.d("MyLog",b.getName());
         return views;
     }
 
