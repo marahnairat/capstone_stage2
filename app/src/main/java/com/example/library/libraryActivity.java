@@ -83,16 +83,14 @@ public class libraryActivity extends AppCompatActivity {
         allbooks.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                context = getApplicationContext();
                 callTheAsyncTask();
             }
         });
         wread.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                context = getApplicationContext();
-                callTheAsyncTask();
-            }
+                mBooksAdapter.setBooks(later);
+                mBooksAdapter.notifyDataSetChanged();            }
         });
     }
 
