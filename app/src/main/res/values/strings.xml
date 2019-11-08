@@ -18,4 +18,5 @@
     <string name="favorite_exercises" />
     <string name="all_books" />
     <string name="log_out" />
+    <string name="book_list">Book List</string>
 </resources>

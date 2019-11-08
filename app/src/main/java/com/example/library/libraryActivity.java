@@ -16,14 +16,15 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import com.google.android.material.appbar.AppBarLayout;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.library.adapters.BookAdapter;
 import com.example.library.data.Book;
 import com.example.library.data.BooksAsyncTask;
@@ -71,7 +72,7 @@ public class libraryActivity extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
 
         setSupportActionBar(myToolBar);
-        title.setText("Book List");
+        title.setText(R.string.book_list);
         setTitle("");
         context = getApplicationContext();
         initRecyclerView();

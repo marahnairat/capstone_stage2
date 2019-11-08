@@ -60,7 +60,6 @@ public class BookDetailsActivity extends AppCompatActivity {
 
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
             Slide slide = new Slide(Gravity.TOP);
-            slide.addTarget(R.id.add_later);
             slide.addTarget(R.id.add_fav);
             getWindow().setEnterTransition(slide);
             getWindow().setExitTransition(new Explode());
@@ -91,11 +90,11 @@ public class BookDetailsActivity extends AppCompatActivity {
                     public void run() {
                         if (fav) {
                             //remove from database
-                            db.favoritesDAO().deleteBook(b);
+                            db.laterDAO().deleteBook(b);
                         } else {
                             //add to database
                             //FavoriteMovie(m);
-                            db.favoritesDAO().insertBook(b);
+                            db.laterDAO().insertBook(b);
                         }
                     }
                 });
@@ -123,7 +122,7 @@ public class BookDetailsActivity extends AppCompatActivity {
 
     @Override
     protected void onResume() {
-        f = db.favoritesDAO().loadBookById(b.getId());
+        f = db.laterDAO().loadBookById(b.getId());
         f.observeForever(new Observer< Book >() {
             @Override
             public void onChanged(Book exercise) {

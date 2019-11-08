@@ -15,7 +15,7 @@ public class LaterViewModel extends AndroidViewModel {
     public LaterViewModel(@NonNull Application application) {
         super(application);
         AppDatabase db = AppDatabase.getInstance(this.getApplication());
-        LaterRead = db.favoritesDAO().loadFavorites();
+        LaterRead = db.laterDAO().loadLater();
     }
 
     public LiveData<List<Book>> getLater() {

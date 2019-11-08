@@ -11,21 +11,21 @@ import androidx.room.Update;
 
 import java.util.List;
 
-    @Dao
-    public interface LaterDAO {
+@Dao
+public interface LaterDAO {
 
-        @Query("SELECT * FROM Later_on")
-        LiveData<List<Book>> loadFavorites();
+    @Query("SELECT * FROM Later_on")
+    LiveData<List<Book>> loadLater();
 
-        @Insert
-        void insertBook(Book e);
+    @Insert
+    void insertBook(Book e);
 
-        @Delete
-        void deleteBook(Book e);
+    @Delete
+    void deleteBook(Book e);
 
-        @Update(onConflict = OnConflictStrategy.REPLACE)
-        void updateBook(Book e);
+    @Update(onConflict = OnConflictStrategy.REPLACE)
+    void updateBook(Book e);
 
-        @Query("SELECT * FROM Later_on WHERE name = :id")
-        LiveData<Book> loadBookById(int id);
-    }
+    @Query("SELECT * FROM Later_on WHERE name = :id")
+    LiveData<Book> loadBookById(int id);
+}

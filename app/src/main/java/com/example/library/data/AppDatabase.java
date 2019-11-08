@@ -27,5 +27,5 @@ public abstract class AppDatabase extends RoomDatabase {
         Log.d(LOG_TAG, "Getting the database instance");
         return sInstance;
     }
-    public abstract LaterDAO favoritesDAO();
+    public abstract LaterDAO laterDAO();
 }
