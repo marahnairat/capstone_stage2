@@ -56,6 +56,8 @@ public class libraryActivity extends AppCompatActivity {
     private ArrayList<Book> books = new ArrayList<>();
     private Context context;
     private Bundle bundle;
+    private List<Book> later = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,7 +84,13 @@ public class libraryActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 context = getApplicationContext();
-                initRecyclerView();
+                callTheAsyncTask();
+            }
+        });
+        wread.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                context = getApplicationContext();
                 callTheAsyncTask();
             }
         });
@@ -101,8 +109,8 @@ public class libraryActivity extends AppCompatActivity {
             case R.id.all:
                 callTheAsyncTask();
                 break;
-            case R.id.favorite:
-                mBooksAdapter.setBooks(books);
+            case R.id.wread:
+                mBooksAdapter.setBooks(later);
                 mBooksAdapter.notifyDataSetChanged();
                 break;
             case R.id.log_out:
@@ -154,12 +162,11 @@ public class libraryActivity extends AppCompatActivity {
     private void setUpViewModel(){
         Log.d("MyLog","setUpViewModel");
         LaterViewModel viewModel = ViewModelProviders.of(this).get(LaterViewModel.class);
-        //movies.addAll(favorites);
         viewModel.getLater().observe(this, new Observer<List<Book>>() {
             @Override
-            public void onChanged(List<Book> later) {
+            public void onChanged(List<Book> books) {
                 later.clear();
-                later.addAll(later);
+                later.addAll(books);
                 mBooksAdapter.notifyDataSetChanged();
                 for (int i=0; i< books.size();i++)
                     Log.d("MyLogWidget", books.get(i).getId()+"");

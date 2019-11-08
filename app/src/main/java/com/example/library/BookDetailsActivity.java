@@ -64,7 +64,6 @@ public class BookDetailsActivity extends AppCompatActivity {
             getWindow().setEnterTransition(slide);
             getWindow().setExitTransition(new Explode());
         }
-        //replace data
 
         db = AppDatabase.getInstance(getApplicationContext());
 
@@ -82,7 +81,7 @@ public class BookDetailsActivity extends AppCompatActivity {
         //setSupportActionBar(mToolBar);
         title.setText(b.getName());
         //setTitle("");
-        add_fav.setOnClickListener(new View.OnClickListener() {
+        add_later.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 AppExecutors.getInstance().getDiskIO().execute(new Runnable() {
@@ -93,19 +92,18 @@ public class BookDetailsActivity extends AppCompatActivity {
                             db.laterDAO().deleteBook(b);
                         } else {
                             //add to database
-                            //FavoriteMovie(m);
                             db.laterDAO().insertBook(b);
                         }
                     }
                 });
                 if (fav) {
-                    add_fav.setText("Add to Favorite");
+                    add_later.setText("Add to Later read");
                     Toast.makeText(BookDetailsActivity.this,
-                            "Removed from Favorites", Toast.LENGTH_SHORT).show();
+                            "Removed from Later read", Toast.LENGTH_SHORT).show();
                 } else {
-                    add_fav.setText("Remove from Favorite");
+                    add_later.setText("Remove from Later");
                     Toast.makeText(BookDetailsActivity.this,
-                            "Added To Favorites", Toast.LENGTH_SHORT).show();
+                            "Added To Later", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -128,14 +126,14 @@ public class BookDetailsActivity extends AppCompatActivity {
             public void onChanged(Book exercise) {
                 if (f.getValue() != null) {
                     fav = true;
-                    add_fav.setText("Remove from Favorite");
+                    add_fav.setText("Remove from Later read");
                 } else {
                     fav = false;
                 }
             }
         });
         if (fav) {
-            add_fav.setText("Remove from Favorite");
+            add_later.setText("Remove from Later");
         }
         super.onResume();
     }
